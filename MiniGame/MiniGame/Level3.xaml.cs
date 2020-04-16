@@ -19,6 +19,25 @@ namespace MiniGame
         public Level3()
         {
             InitializeComponent();
+            AnswerButton.Click += AnswerButton_Click;
+        }
+
+        private void AnswerButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+            ComboBoxItem selectedItem = (ComboBoxItem)cbBox.SelectedItem;
+            switch (selectedItem.Name)
+            {
+                case "First":
+                    MessageBox.Show("Ты пытался\nхехе");
+                    break;
+                case "Second":
+                    MessageBox.Show("Молодец ты прошёл");
+                    break;
+                case "Third":
+                    MessageBox.Show("Я промолчу");
+                    break;
+            }
         }
     }
 }
